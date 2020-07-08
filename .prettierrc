@@ -1,0 +1,47 @@
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "printWidth": 90,
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false,
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": "*.json",
+      "options": {
+        "printWidth": 70,
+        "parser": "json"
+      }
+    },
+    {
+      "files": ".prettierrc",
+      "options": {
+        "printWidth": 80,
+        "parser": "json"
+      }
+    },
+    {
+      "files": ".babelrc",
+      "options": {
+        "printWidth": 80,
+        "parser": "json"
+      }
+    },
+    {
+      "files": ".stylelintrc",
+      "options": {
+        "printWidth": 80,
+        "parser": "json"
+      }
+    }
+  ]
+}

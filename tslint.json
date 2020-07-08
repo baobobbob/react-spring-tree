@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-config-standard",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "no-console": false,
+    "no-floating-promises": false,
+    "object-literal-sort-keys": false,
+    "jsx-no-lambda": false,
+    "prettier": true
+  },
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "linterOptions": {
+    "exclude": ["node_modules", "__build__"]
+  }
+}

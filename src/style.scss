@@ -1,0 +1,46 @@
+$root: TreeNode;
+
+.#{$root} {
+  position: relative;
+  padding: 4px 0 0 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+  vertical-align: middle;
+
+  &__content {
+    will-change: transform, opacity, height;
+    margin-left: 6px;
+    padding: 0 0 0 14px;
+    border-left: 1px dashed rgba(255, 255, 255, 0.4);
+    overflow: hidden;
+  }
+
+  &__icon {
+    width: 1em;
+    height: 1em;
+    margin-right: 10px;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+
+  &__title {
+    border-bottom: 1px dotted #ddd;
+    font-size: 20px;
+    color: #696c6d;
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    color: #696c6d;
+  }
+
+  &__toggle {
+    display: flex;
+
+    svg {
+      fill: #696c6d;
+    }
+  }
+}

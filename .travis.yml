@@ -1,0 +1,45 @@
+language: node_js
+node_js:
+  - stable
+cache: yarn
+script: skip
+
+after_success:
+  - npm run test:coveralls
+  - npm run build:storybook
+
+deploy:
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    keep_history: true
+    local_dir: storybook-static
+    on:
+      branch: release
+
+jobs:
+  include:
+    - stage: release
+      node_js: lts/*
+      script: npm run build
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script: npx -p @semantic-release/changelog -p @semantic-release/git -p semantic-release semantic-release
+        on:
+          branch: release
+
+#jobs:
+#  include:
+#    - stage: release
+#      node_js: stable
+#      script: npm run build
+#      deploy:
+#        provider: script
+#        script: npx -p @semantic-release/changelog -p @semantic-release/git -p semantic-release semantic-release
+#        skip_cleanup: true
+
+notifications:
+  email:
+    on_success: never
+    on_failure: never

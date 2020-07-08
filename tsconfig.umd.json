@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "__build__"
+  },
+  "include": [
+    "./src/*.tsx"
+  ]
+}
