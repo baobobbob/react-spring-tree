@@ -11,7 +11,7 @@ after_success:
 deploy:
   - provider: pages
     skip_cleanup: true
-    github_token: $GITHUB_TOKEN
+    github_token: $GH_TOKEN
     keep_history: true
     local_dir: storybook-static
     on:
@@ -28,16 +28,6 @@ jobs:
         script: npx -p @semantic-release/changelog -p @semantic-release/git -p semantic-release semantic-release
         on:
           branch: release
-
-#jobs:
-#  include:
-#    - stage: release
-#      node_js: stable
-#      script: npm run build
-#      deploy:
-#        provider: script
-#        script: npx -p @semantic-release/changelog -p @semantic-release/git -p semantic-release semantic-release
-#        skip_cleanup: true
 
 notifications:
   email:
