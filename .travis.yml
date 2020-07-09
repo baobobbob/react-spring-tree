@@ -16,7 +16,7 @@ after_success:
 #    local_dir: storybook-static
 #    on:
 #      branch: master
-#      tags: true
+#       tags: true
 
 jobs:
   include:
