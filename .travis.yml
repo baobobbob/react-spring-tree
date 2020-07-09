@@ -20,9 +20,14 @@ after_success:
 jobs:
   include:
     - stage: release
+      node_js: stable
       script: npm run build
-      after_success:
-        - npm run semantic-release
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script: npx -p @semantic-release/changelog -p @semantic-release/git -p semantic-release
+        on:
+          branch: release
 
 notifications:
   email:
