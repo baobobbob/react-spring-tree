@@ -15,7 +15,8 @@ after_success:
 #    keep_history: true
 #    local_dir: storybook-static
 #    on:
-#      branch: release
+#      branch: master
+#      tags: true
 
 jobs:
   include:
