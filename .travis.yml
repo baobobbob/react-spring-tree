@@ -27,9 +27,6 @@ jobs:
         provider: script
         skip_cleanup: true
         script: npx -p @semantic-release/changelog -p @semantic-release/git -p semantic-release semantic-release
-        on:
-          branch: master
-          tags: true
 
 notifications:
   email:
