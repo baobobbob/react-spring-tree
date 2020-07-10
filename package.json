@@ -26,8 +26,7 @@
     "test:coveralls": "jest --coverage --updateSnapshot && cat ./coverage/lcov.info | coveralls",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch --runInBand",
-    "test": "jest",
-    "semantic-release": "semantic-release"
+    "test": "jest"
   },
   "dependencies": {
     "classnames": "^2.2.6",
@@ -46,10 +45,6 @@
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
     "@babel/preset-typescript": "^7.6.0",
-    "@semantic-release/changelog": "^5.0.1",
-    "@semantic-release/commit-analyzer": "^8.0.1",
-    "@semantic-release/git": "^9.0.0",
-    "@semantic-release/release-notes-generator": "^9.0.1",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-docs": "^5.3.19",
     "@storybook/addon-info": "^5.3.19",
