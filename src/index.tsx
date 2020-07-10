@@ -16,7 +16,7 @@ interface ITreeProps {
   onClickToggle?(): void
 }
 
-export function SpringTreeNode(props: ITreeProps) {
+export function SpringReactSpringTreeNode(props: ITreeProps) {
   const { children, name, style, open } = props
   const prev = usePrevious(open)
   const [ref, { height: viewHeight }] = useMeasure()
@@ -33,21 +33,24 @@ export function SpringTreeNode(props: ITreeProps) {
     | 'CloseSquareO'
   const Icon = Icons[svgKey]
   return (
-    <div style={props.style} className={cn('TreeNode', props.className)}>
-      <div className={'TreeNode__title'}>
+    <div style={props.style} className={cn('ReactSpringTreeNode', props.className)}>
+      <div className={'ReactSpringTreeNode__title'}>
         <span
-          className={'TreeNode__toggle'}
+          className={'ReactSpringTreeNode__toggle'}
           onClick={() => props.onClickToggle && props.onClickToggle()}
         >
           {defaultTo(
             props.toggleIcon,
-            <Icon className={'TreeNode__icon'} style={{ opacity: children ? 1 : 0.3 }} />
+            <Icon
+              className={'ReactSpringTreeNode__icon'}
+              style={{ opacity: children ? 1 : 0.3 }}
+            />
           )}
         </span>
         <span style={{ verticalAlign: 'middle', ...style }}>{name}</span>
       </div>
       <animated.div
-        className={'TreeNode__content'}
+        className={'ReactSpringTreeNode__content'}
         style={{
           opacity,
           height: height.interpolate((_height: any) =>
