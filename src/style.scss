@@ -11,17 +11,16 @@ $root: ReactSpringTreeNode;
   &__content {
     will-change: transform, opacity, height;
     margin-left: 6px;
-    padding: 0 0 0 14px;
+    padding: 0 0 0 24px;
     border-left: 1px dashed rgba(255, 255, 255, 0.4);
     overflow: hidden;
   }
 
   &__icon {
-    width: 1em;
     height: 1em;
-    margin-right: 10px;
     cursor: pointer;
     vertical-align: middle;
+    text-align: left;
   }
 
   &__title {
@@ -38,6 +37,7 @@ $root: ReactSpringTreeNode;
 
   &__toggle {
     display: flex;
+    width: 30px;
 
     svg {
       fill: #696c6d;

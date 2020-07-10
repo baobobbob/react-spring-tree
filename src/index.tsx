@@ -16,7 +16,7 @@ interface ITreeProps {
   onClickToggle?(): void
 }
 
-export function SpringReactSpringTreeNode(props: ITreeProps) {
+export function ReactSpringTreeNode(props: ITreeProps) {
   const { children, name, style, open } = props
   const prev = usePrevious(open)
   const [ref, { height: viewHeight }] = useMeasure()
