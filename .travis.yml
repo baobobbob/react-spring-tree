@@ -8,27 +8,23 @@ after_success:
   - npm run test:coveralls
   - npm run build:storybook
 
-#deploy:
-#  - provider: pages
-#    skip_cleanup: true
-#    github_token: $GH_TOKEN
-#    keep_history: true
-#    local_dir: storybook-static
-#    on:
-#      branch: master
-#       tags: true
-
-jobs:
-  include:
-    - stage: release
-      node_js: stable
-      script: npm run build
-      deploy:
-        provider: script
-        skip_cleanup: true
-        script: npx -p @semantic-release/changelog -p @semantic-release/git -p semantic-release semantic-release
+deploy:
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GH_TOKEN
+    keep_history: true
+    local_dir: storybook-static
+    on:
+      branch: release
+  - provider: npm
+    email: baobobbob@outlook.com
+    api_key: $NPM_TOKEN
+    skip_cleanup: false
+    script: npm run build
+    on:
+      branch: release
 
 notifications:
   email:
     on_success: never
-    on_failure: never
+    on_failure: always
