@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
-import { SpringTreeNode } from '../src'
+import { ReactSpringTreeNode } from '../src'
 
 export const Demo = () => {
   const [open, setOpen] = useState(true)
   const [open1, setOpen1] = useState(false)
+  const [open2, setOpen2] = useState(false)
   return (
     <div>
-      <SpringTreeNode open={open} onClickToggle={() => setOpen(!open)} name={'root'}>
-        <SpringTreeNode name={'info'} />
-        <SpringTreeNode name={'info'} />
+      <ReactSpringTreeNode open={open} onClickToggle={() => setOpen(!open)} name={'root'}>
+        <ReactSpringTreeNode name={'info'} />
+        <ReactSpringTreeNode name={'info'} />
 
-        <SpringTreeNode
+        <ReactSpringTreeNode
           toggleIcon={
             <div style={{ cursor: 'pointer', width: 18, textAlign: 'center' }}>
               {open1 ? '-' : '+'}
@@ -20,21 +21,33 @@ export const Demo = () => {
           onClickToggle={() => setOpen1(!open1)}
           name={'custom icon'}
         >
-          <SpringTreeNode name={'info'} />
-          <SpringTreeNode name={'info'} />
-        </SpringTreeNode>
-      </SpringTreeNode>
+          <ReactSpringTreeNode
+            onClickToggle={() => setOpen2(!open2)}
+            open={open2}
+            name={'info'}
+          >
+            <div style={{ paddingTop: 10 }}>
+              <div
+                style={{
+                  background: '#39a3bf',
+                  height: 150,
+                  width: 200,
+                  borderRadius: 5,
+                }}
+              >
+                <span>title</span>
+              </div>
+            </div>
+          </ReactSpringTreeNode>
+          <ReactSpringTreeNode name={'info'} />
+          <ReactSpringTreeNode toggleIcon={''} name={<span>hide toggle</span>} />
+        </ReactSpringTreeNode>
+      </ReactSpringTreeNode>
     </div>
   )
 }
 
-export const DemoStory = () => <Demo />
-
 export default {
   title: 'Base',
-  component: DemoStory,
-}
-
-DemoStory.story = {
-  name: 'example',
+  component: Demo,
 }
