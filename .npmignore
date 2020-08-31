@@ -1,5 +1,8 @@
 __stories__
 __tests__
+coverage
+storybook-static
+src
 .vscode
 .storybook
 asset
